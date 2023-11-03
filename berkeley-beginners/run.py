@@ -6,6 +6,8 @@ in_dir = "./scores"
 out_dir = "./results"
 old_file_dir = "./old-scores"
 
+print_results = False
+
 # get tsv files from the last round (making sure to put them all in IN_DIR first) 
 files = listdir(in_dir)
 invoke_command = ["python", "score_final.py"]
@@ -20,7 +22,7 @@ for i, file_name in enumerate(files):
     invoke_command.append(f"{in_dir}/{new_file_name}")
 
 # output results to separate directory
-invoke_command.extend(["--output_dir", out_dir])
+invoke_command.extend(["-p"] if print_results else ["--output_dir", out_dir])
 
 print(f"Running {invoke_command}")
 print(f"Scoring {files}\n\n")
