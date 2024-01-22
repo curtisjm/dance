@@ -351,7 +351,8 @@ def place_couples(
             # for as long as we have tied couples
             while len(majority_couples) > 0:
                 # identify the max majority
-                max_majority = max([m for c, m in majority_couples_counts])
+                # max_majority = max([m for c, m in majority_couples_counts])
+                max_majority = max([m for c, m in majority_couples_counts if c in majority_couples])
                 couples_with_max = [
                     c for c, m in majority_couples_counts if m == max_majority
                 ]

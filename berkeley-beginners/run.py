@@ -3,7 +3,7 @@ from os import listdir
 
 # change these if you are using different directories
 in_dir = "./scores"
-out_dir = "./results"
+out_dir = "./"
 old_file_dir = "./old-scores"
 
 print_results = False
